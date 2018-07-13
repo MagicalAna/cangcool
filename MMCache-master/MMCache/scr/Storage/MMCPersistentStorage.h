@@ -16,7 +16,8 @@
 -(void)createTable;
 -(void)dropTable;
 -(void)countPlus:(NSString*)id andAccessCount:(int)accessCount;
-- (NSDate *)getDateTimeFromMilliSeconds:(long long) miliSeconds;
-- (long long)getDateTimeTOMilliSeconds:(NSDate *)datetime;
+- (NSDate *)getDateTimeFromMilliSeconds: (int) leftHalf andRightHalf: (int)rightHalf;
+- (int)getDateTimeTOMilliSeconds:(NSDate *)datetime andRightHalf:(int *)rightHalf;
+- (void)showTable;
 
 @end

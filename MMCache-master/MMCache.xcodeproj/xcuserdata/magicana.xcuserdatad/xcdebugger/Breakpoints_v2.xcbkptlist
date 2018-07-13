@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MMCache/scr/Storage/MMCPersistentStorage.m"
-            timestampString = "553070068.630273"
+            filePath = "MMCache/scr/Policy/MMCPolicyLFU.m"
+            timestampString = "553156042.38239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
-            landmarkName = "-purify"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-saveObject:toStorage:maxCapacity:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

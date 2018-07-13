@@ -33,11 +33,12 @@ Dog *RandomDog(void) {
 }
 
 int main(int argc, const char * argv[]) {
-        CACHE.storageType = MMCStorageTypeInMemory;
-        CACHE.policyType = MMCPolicyTypeFIFO;
-        CACHE.capacity = 10000;
-
-        for (NSInteger i = 0; i < 10000; i++) {
+        CACHE.storageType = MMCStorageTypePersistent;
+        CACHE.policyType = MMCPolicyTypeLFU;
+        CACHE.capacity = 1;
+    MMCPersistentStorage *a = MMCPersistentStorage.new;
+    [a purify];
+        /*for (NSInteger i = 0; i < 10000; i++) {
             [CACHE saveObject:RandomDog()];
         }
 
@@ -45,17 +46,17 @@ int main(int argc, const char * argv[]) {
         for (NSInteger i = 0; i < 1000; i++) {
             NSInteger index = arc4random_uniform((int)allIds.count);
             [CACHE objectForId:allIds[index]];
-        }
+        }*/
 
-        Dog *dog1 = [Dog dogWithName:@"billy" age:2 breed:@"Husky"];
-        [CACHE saveObject:dog1];
+        /*Dog *dog1 = [Dog dogWithName:@"billy" age:2 breed:@"Husky"];
+        [CACHE saveObject:dog1];*/
 
-        CACHE.policyType = MMCPolicyTypeFIFO;
+        /*CACHE.policyType = MMCPolicyTypeFIFO;
 
         Dog *dog2 = [Dog dogWithName:@"lucas" age:3 breed:@"Barbet"];
         [CACHE saveObject:dog2];
 
-        CACHE.policyType = MMCPolicyTypeLFU;
+        CACHE.policyType = MMCPolicyTypeLFU;*/
 
         Cat *cat1 = [Cat dogWithName:@"luna" age:1 breed:@"British Shorthair"];
         [CACHE saveObject:cat1];
@@ -63,11 +64,18 @@ int main(int argc, const char * argv[]) {
         Cat *cat2 = [Cat dogWithName:@"benny" age:5 breed:@"Burmese"];
         [CACHE saveObject:cat2];
 
-        for (NSInteger i = 0; i < 100; i++) {
+        /*for (NSInteger i = 0; i < 100; i++) {
             [CACHE saveObject:RandomDog()];
         }
 
-        NSLog(@"");
+        NSLog(@"");*/
+    [a showTable];
+    /*NSDate *date = [NSDate date];
+    int c;
+    int b = [a getDateTimeTOMilliSeconds:date andRightHalf: &c];
+    NSLog(@"%d %d", b, c);*/
+    //[a purify];
+    //NSLog(@"%ld",[a count]);
         
 
     return 0;
